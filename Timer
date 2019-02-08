@@ -1,0 +1,72 @@
+{
+  "name": "timer",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "ugXQS",
+  "actions": [
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**How long would you like it to last?**(In Minutes)",
+      "storage": "1",
+      "varName2": "dddd",
+      "name": "Send Message"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "filter": "content.length > 0",
+      "max": "1",
+      "time": "60000",
+      "storage2": "1",
+      "varName2": "Timer",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "9",
+      "name": "Await Response Call Action"
+    },
+    {
+      "storage": "1",
+      "varName": "Timer",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "dddd",
+      "name": "Delete Message"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**Set!**",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "time": "${tempVars(\"Timer\")}",
+      "measurement": "2",
+      "name": "Wait"
+    },
+    {
+      "channel": "1",
+      "varName": "",
+      "message": "**Beep Beep**\nTimer Up!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**60 seconds is now over.Please try agian and respond in time**",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ]
+}
