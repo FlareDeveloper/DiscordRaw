@@ -1,2 +1,2 @@
 # DiscordRaw
-For DISCORD BOT MAKER
+Dm me on discord for any problems: Toxic!#2019
